@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: ai-api
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: ai-api
+
+  template:
+    metadata:
+      labels:
+        app: ai-api
+
+    spec:
+      containers:
+        - name: ai-api
+          image: ai-devops-api
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8000
+
+          envFrom:
+            - configMapRef:
+                name: ai-api-config
+            - secretRef:
+                name: ai-api-secret
+                
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 5

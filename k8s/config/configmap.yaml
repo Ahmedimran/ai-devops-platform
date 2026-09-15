@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ai-api-config
+data:
+  APP_ENV: "development"
+  MODEL_NAME: "demo-model"
+  LOG_LEVEL: "info"
