@@ -15,33 +15,39 @@ orchestration, monitoring, and future ML model deployment.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
+```text
 devops-lab/
 ├── app/
 │   ├── __init__.py
 │   └── main.py
+│
 ├── tests/
 │   └── test_api.py
+│
 ├── k8s/
 │   ├── config/
 │   │   ├── configmap.yaml
 │   │   └── secret.yaml
+│   │
 │   ├── postgres/
 │   │   ├── secret.yaml
 │   │   ├── pvc.yaml
 │   │   ├── deployment.yaml
 │   │   └── service.yaml
+│   │
 │   ├── deployment.yaml
 │   ├── service.yaml
 │   └── ingress.yaml
+│
 ├── Dockerfile
 ├── requirements.txt
 ├── pytest.ini
+│
 └── .github/
     └── workflows/
         └── ci.yml
-
 ---
 
 ## 🚀 FastAPI Application
