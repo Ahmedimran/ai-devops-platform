@@ -48,6 +48,7 @@ devops-lab/
 └── .github/
     └── workflows/
         └── ci.yml
+`````
 ---
 
 ## 🚀 FastAPI Application
