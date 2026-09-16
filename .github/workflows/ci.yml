@@ -37,3 +37,18 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t ai-devops-api:${{ github.sha }} .
+  runner-test:
+    runs-on: [self-hosted, Linux, X64]
+
+    steps:
+      - name: Test WSL2 runner
+        run: |
+          echo "Runner is working!"
+          echo "Hostname:"
+          hostname
+          echo "Docker:"
+          docker --version
+          echo "Kubectl:"
+          kubectl version --client
+          echo "Minikube:"
+          minikube version
